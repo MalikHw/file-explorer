@@ -39,7 +39,7 @@ static ExplorerPopup * g_popup = nullptr;
    ========================================================- */
 
 bool ExplorerPopup::init(PickerMode mode, geode::utils::file::FilePickOptions options) {
-    if (!Popup::init(440.f, 290.f, "", "GJ_square02.png"))
+    if (!Popup::init(440.f, 290.f, "GJ_square02.png"))
         return false;
 
     m_mode = mode;
@@ -277,7 +277,7 @@ void ExplorerPopup::onRefresh(CCObject *) {
 
 void ExplorerPopup::onSearch(CCObject *) {
     std::error_code e;
-    auto path = std::filesystem::weakly_canonical(m_pathInput->getString(), e);
+    auto path = std::filesystem::weakly_canonical(std::filesystem::path(std::string(m_pathInput->getString())), e);
     if (e) {
         Notification::create(e.message(), NotificationIcon::Error)->show();
         return;
