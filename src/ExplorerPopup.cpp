@@ -38,7 +38,13 @@ static ExplorerPopup * g_popup = nullptr;
     File popup
    ========================================================- */
 
-bool ExplorerPopup::setup(std::string const & value) {
+bool ExplorerPopup::init(PickerMode mode, geode::utils::file::FilePickOptions options) {
+    if (!Popup::init(440.f, 290.f, "", "GJ_square02.png"))
+        return false;
+
+    m_mode = mode;
+    m_options = options;
+
     m_buttonMenu->ignoreAnchorPointForPosition(false);
     
     m_currentPath = (m_options.defaultPath ? m_options.defaultPath.value().parent_path() : HOME_PATH);
@@ -357,10 +363,8 @@ ExplorerPopup * ExplorerPopup::create(PickerMode mode, geode::utils::file::FileP
     cue::resetNode(g_popup);
 
     auto ret = new ExplorerPopup();
-    ret->m_mode = mode;
-    ret->m_options = options;
     g_popup = ret;
-    if (ret->initAnchored(440.f, 290.f, "", "GJ_square02.png")) {
+    if (ret->init(mode, options)) {
         ret->autorelease();
         return ret;
     }
