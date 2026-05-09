@@ -5,7 +5,6 @@
    ========================================================- */
 
 #include "Utils.h"
-#include <Geode/utils/async.hpp>
 
 /* -========================================================
     Types
@@ -13,9 +12,8 @@
 
 using PickTaskRet = geode::Result<std::filesystem::path>;
 using PickManyTaskRet = geode::Result<std::vector<std::filesystem::path>>;
-using PickFuture = arc::Future<PickTaskRet>;
-using PickManyFuture = arc::Future<PickManyTaskRet>;
-// what the fuck are these original ai-generated-looking comments
+using PickTask = geode::Task<PickTaskRet>;
+using PickManyTask = geode::Task<PickManyTaskRet>;
 
 /* -========================================================
     Hooks
