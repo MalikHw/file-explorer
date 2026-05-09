@@ -7,3 +7,5 @@ New one (amazing)
 
 Old one (gross ewwww)
 ![Example](resources/ss2.png)
+
+btw ported to GD 2.2081 by [MalikHw47](https://www.youtube.com/@MalikHw47/)
