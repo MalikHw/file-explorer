@@ -26,7 +26,7 @@ struct State {
 class ExplorerEntryCell;
 
 // The popup popup
-class ExplorerPopup : public geode::Popup<std::string const &> {
+class ExplorerPopup : public geode::Popup {
 public:
     // Creates the file popup as a global instance and cancels the previous in case it was open
     static ExplorerPopup * create(PickerMode mode, geode::utils::file::FilePickOptions options);
@@ -58,7 +58,7 @@ public:
     // The popup mode, translation from the geode alt.
     PickerMode m_mode;
 protected:
-    bool setup(std::string const & value) override;
+    bool init(PickerMode mode, geode::utils::file::FilePickOptions options);
 private:
     void setupFrame();
     void setupTop();
