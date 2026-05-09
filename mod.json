@@ -1,15 +1,15 @@
 {
-	"geode": "4.10.0",
+	"geode": "5.7.1",
 	"gd": {
-		"win": "2.2074",
-		"android": "2.2074",
-		"mac": "2.2074",
-		"ios": "2.2074"
+		"win": "2.2081",
+		"android": "2.2081",
+		"mac": "2.2081",
+		"ios": "2.2081"
 	},
 	"id": "letaldev.file-explorer",
 	"name": "File explorer",
 	"version": "v1.0.1",
-	"developer": "letaldev",
+	"developers": ["letaldev", "MalikHw47"],
 	"description": "Replaces the file explorer with a built-in one that fits more the GD aesthetic",
 	"dependencies": {
 		"geode.node-ids": ">=v1.20.0"
